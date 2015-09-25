@@ -1,7 +1,10 @@
 <!--参考: https://github.com/k2works/sinatra_rakuten_api-->
 <div class="starter-template">
-  <h1>20代女性 のランキングTOP 30</h1>
-    <table rules="all" class="table table-hover">
+  <h1>
+    <%= @age %>代
+    <% @sexsex = '男性' ; @sexsex = '女性' if @sex == '1' %>
+    <%= @sexsex %>のランキングTOP 30</h1>
+    <table rules="all" class="container">
       <tr>
         <th>No</th>
         <th>商品名</th>
