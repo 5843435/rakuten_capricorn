@@ -9,6 +9,8 @@ get '/' do
 end
 
 get '/:sex/:age' do |s,a|
+  @age = a
+  @sex = s
   RakutenWebService.configuration do |c|
     c.application_id = ENV["APPID"]
     c.affiliate_id = ENV["AFID"]
