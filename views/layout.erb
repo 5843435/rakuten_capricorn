@@ -1,1 +1,21 @@
-<%= yield %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>rakuten Capricorn</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <%= yield %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.1.js"></script>
+<script src="jquery.quicksearch.js"></script>
+<script>
+$(function () {
+  $('input#id_search').quicksearch('table tbody tr');
+});
+</script>
+</body>
+</html>
+
