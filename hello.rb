@@ -5,12 +5,16 @@ require 'rakuten_web_service'
 #参考: https://github.com/k2works/sinatra_rakuten_api
 
 get '/' do
+  erb :index
+end
+
+get '/:sex/:age' do |s,a|
   RakutenWebService.configuration do |c|
     c.application_id = ENV["APPID"]
     c.affiliate_id = ENV["AFID"]
   end
 
   # Use genre id to fetch genre object
-  @rankings = RakutenWebService::Ichiba::Item.ranking(:age => 20, :sex => 1)
+  @rankings = RakutenWebService::Ichiba::Item.ranking(:age => a, :sex => s)
   erb :item_ranking
 end
